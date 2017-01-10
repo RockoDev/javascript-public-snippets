@@ -1,22 +1,13 @@
 function displayTimeToSeconds(time) {
-	var a = time.split(':'),
-	    r = 0;
-	if ( a.length === 3 ) {
-		var h = parseInt(a[0]),
-		    m = parseInt(a[1]),
-		    s = parseInt(a[2]);
-		r = r + (h*3600);
-		r = r + (m*60);
-		r = r + s;
+    var a = time.split(':');
+    if ( a.length === 3 ) {
+        return ( parseInt(a[0]) * 3600 ) + ( parseInt(a[1]) * 60 ) + parseInt(a[2]);
     } else if ( a.length === 2 ) {
-		m = parseInt(a[0]);
-		s = parseInt(a[1]);
-		r = r + (m*60);
-		r = r + s;
+        return ( parseInt(a[0]) * 60 ) + parseInt(a[1]);
     } else if ( a.length === 1 ) {
-		r = parseInt(a[0]);
-	}
-	return r;
+        return parseInt(a[0]);
+    }
+    return 0;
 }
 
-// displayTimeToSeconds('1:00:00') returns 3600
+// displayTimeToSeconds('01:00:00') returns 3600
