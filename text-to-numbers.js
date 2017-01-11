@@ -1,5 +1,5 @@
 function textToNumbers(text) {
-	var r = text.toUpperCase();
+    var r = text.toUpperCase();
     [
         ['A','4'],
         ['B','8'],
@@ -11,7 +11,9 @@ function textToNumbers(text) {
         ['T','7'],
         ['Z','2']
     ].forEach(function(c) {
-        r = r.replace(c[0], c[1]);
+        r = r.replace(new RegExp(c[0], 'g'), c[1]);
     });
-	return r;
+    return r;
 }
+
+//textToNumbers('What\'s the meaning of life?') //returns "WH47'5 7H3 M34N1N6 0F L1F3?"
